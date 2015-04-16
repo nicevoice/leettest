@@ -11,10 +11,12 @@ ADMINS = (
 
 MANAGERS = ADMINS
 
+PROJECT_ROOT=os.path.join(os.path.abspath(os.path.dirname(__file__)),'..')
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'E:\\workspace-python\\leettest\\sqlite.db',                      # Or path to database file if using sqlite3.
+        'NAME':    os.path.join(PROJECT_ROOT,'sqlite.db'),                      # Or path to database file if using sqlite3.
         'USER': '',                      # Not used with sqlite3.
         'PASSWORD': '',                  # Not used with sqlite3.
         'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
@@ -58,12 +60,12 @@ MEDIA_ROOT = ''
 # Examples: "http://media.lawrence.com/media/", "http://example.com/media/"
 MEDIA_URL = ''
 
-'''
+
 # Absolute path to the directory static files should be collected to.
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/home/media/media.lawrence.com/static/"
-STATIC_ROOT = ''
+STATIC_ROOT = os.path.join(PROJECT_ROOT,'static')
 
 # URL prefix for static files.
 # Example: "http://media.lawrence.com/static/"
@@ -74,27 +76,10 @@ STATICFILES_DIRS = (
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-)
-'''
-
-PROJECT_ROOT=os.path.join(os.path.abspath(os.path.dirname(__file__)),'..')
-
-STATIC_ROOT = os.path.join(PROJECT_ROOT,'static')
-
-STATIC_URL = '/static/'
-
-STATICFILES_DIRS = (
-    # Put strings here, like "/home/html/static" or "C:/www/django/static".
-    # Always use forward slashes, even on Windows.
-    #("css", os.path.join(STATIC_ROOT,'bootstrap-3.3.4-dist/css')),
-    #("js", os.path.join(STATIC_ROOT,'bootstrap-3.3.4-dist/js')),
-    #("images", os.path.join(STATIC_ROOT,'bootstrap-3.3.4-dist/img')),
     ("bootstrap-3.3.4-dist", os.path.join(STATIC_ROOT,'bootstrap-3.3.4-dist')),    
     ("css", os.path.join(STATIC_ROOT,'css')),
     ("images", os.path.join(STATIC_ROOT,'images')),
 )
-
-
 
 
 # List of finder classes that know how to find static files in

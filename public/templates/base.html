@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>LeetTest - Testing never stop</title>
+
+    <!-- Bootstrap -->
+    <link href="../static/bootstrap-3.3.4-dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../static/css/starter-template.css" rel="stylesheet">
+
+    {% block css %}{% endblock %}
+
+  </head>
+  <body>
+    
+     <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">LeetTest</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li {% block active-index %}{% endblock %} ><a href="/">首页</a></li>
+            <li {% block active-news %}{% endblock %} ><a href="#news">资讯</a></li>
+            <li {% block active-blog %}{% endblock %} ><a href="/blog">博客</a></li>
+            <li {% block active-video %}{% endblock %} ><a href="#video">视频</a></li>
+            <li {% block active-tool %}{% endblock %} ><a href="#tool">工具</a></li>
+            <li {% block active-answer %}{% endblock %} ><a href="#answer">问答</a></li>
+            <li {% block active-crowd %}{% endblock %} ><a href="#crowd">众测</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+    
+    {% block content %}{% endblock %}
+
+    <div class="container">
+      <hr>
+
+      <footer>
+        <p><a href="#about">关于我们</a> | <a href="#contact">联系我们</a> | 常见问题 | 隐私协议 | 服务条款</p>
+        <p>&copy; LeetTest 2015</p>
+      </footer>
+    </div> <!-- /container -->
+    
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
+    <script src="../static/bootstrap-3.3.4-dist/js/bootstrap.min.js"></script>
+  </body>
+</html>

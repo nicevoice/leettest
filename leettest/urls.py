@@ -20,6 +20,8 @@ urlpatterns = patterns('',
     url(r'^favicon.ico$','django.views.generic.simple.redirect_to',{'url':'/static/images/favicon.ico'}),
     url('^$','index.views.index'),
     
-    url(r'^blog/$','blog.views.blog_list'),  
+    url(r'^blog/$','blog.views.blog_list'),
+    url(r'^crowd/$','crowd.views.testcycle_list'), 
+    url(r'^crowd/testcycle_show/$','crowd.views.testcycle_show'),   
 )
 

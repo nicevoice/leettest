@@ -79,6 +79,7 @@ STATICFILES_DIRS = (
     ("bootstrap-3.3.4-dist", os.path.join(STATIC_ROOT,'bootstrap-3.3.4-dist')),    
     ("css", os.path.join(STATIC_ROOT,'css')),
     ("images", os.path.join(STATIC_ROOT,'images')),
+    ("js", os.path.join(STATIC_ROOT,'js')),
 )
 
 
@@ -124,7 +125,6 @@ TEMPLATE_DIRS = (
     # Don't forget to use absolute paths, not relative paths.
     TEMPLATE_ROOT,
 )
-print  TEMPLATE_ROOT
 
 INSTALLED_APPS = (
     'django.contrib.auth',

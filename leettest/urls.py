@@ -22,6 +22,8 @@ urlpatterns = patterns('',
     
     url(r'^blog/$','blog.views.blog_list'),
     url(r'^crowd/$','crowd.views.testcycle_list'), 
-    url(r'^crowd/testcycle_show/$','crowd.views.testcycle_show'),   
+    url(r'^crowd/testcycle_show/$','crowd.views.testcycle_show'),  
+    url(r'^crowd/testcycle_add/$','crowd.views.testcycle_add'),  
+    url(r'^crowd/testcycle_addsave/$','crowd.views.testcycle_addsave'),  
 )
 

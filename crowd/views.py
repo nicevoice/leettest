@@ -26,9 +26,9 @@ def testcycle_show(request):
     return render_to_response('testcycle_show.html', {"testcycle": testcycle})
 
 def testcycle_add(request):
-    return render_to_response('testcycle_add.html')
+    return render_to_response('testcycle_add.html',{},RequestContext(request))
 
-@csrf_exempt
+
 def testcycle_addsave(request):
     name=request.POST['name']
     description=request.POST['description']
@@ -38,6 +38,13 @@ def testcycle_addsave(request):
     testcycle.description=description
     testcycle.website=website
     testcycle.save()
+    return HttpResponseRedirect("/crowd/")
+
+
+def testcycle_delete(request):
+    id=request.GET['id'];
+    testcycle=TestCycle.objects.get(id=id)
+    testcycle.delete()
     return HttpResponseRedirect("/crowd/")
 
 

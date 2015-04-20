@@ -48,7 +48,8 @@
 			         <td><a href="testcycle_show?id={{testcycle.id}}">{{ testcycle.name }}</a></td>
 			         <td>{{ testcycle.description }}</td>
 			         <td>{{ testcycle.website }}</td>
-			         <td><a href="testcycle_delete?id={{testcycle.id}}">删除</a> </td>
+               <td><a href="testcycle_edit?id={{testcycle.id}}">编辑</a> </td>
+               <td><a href="testcycle_delete?id={{testcycle.id}}">删除</a> </td>
             </tr>
 			    {% endfor %}
 			   </tbody>

@@ -25,6 +25,8 @@ urlpatterns = patterns('',
     url(r'^crowd/testcycle_show/$','crowd.views.testcycle_show'),  
     url(r'^crowd/testcycle_add/$','crowd.views.testcycle_add'),  
     url(r'^crowd/testcycle_addsave/$','crowd.views.testcycle_addsave'),  
+    url(r'^crowd/testcycle_edit/$','crowd.views.testcycle_edit'),  
+    url(r'^crowd/testcycle_editsave/$','crowd.views.testcycle_editsave'),  
     url(r'^crowd/testcycle_delete/$','crowd.views.testcycle_delete'),  
 )
 

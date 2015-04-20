@@ -40,6 +40,24 @@ def testcycle_addsave(request):
     testcycle.save()
     return HttpResponseRedirect("/crowd/")
 
+def testcycle_edit(request):
+    id=request.GET['id']
+    testcycle=TestCycle.objects.get(id=id)
+    return render_to_response('testcycle_edit.html',{"testcycle":testcycle},RequestContext(request))
+
+
+def testcycle_editsave(request):
+    id=request.POST['id']
+    name=request.POST['name']
+    description=request.POST['description']
+    website=request.POST['website']
+    testcycle=TestCycle.objects.get(id=id)
+    testcycle.name=name
+    testcycle.description=description
+    testcycle.website=website
+    testcycle.save()
+    return HttpResponseRedirect("/crowd/")
+
 
 def testcycle_delete(request):
     id=request.GET['id'];

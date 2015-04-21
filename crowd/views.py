@@ -25,33 +25,25 @@ def testcycle_show(request):
     testcycle = TestCycle.objects.get(id=id)
     return render_to_response('testcycle_show.html', {"testcycle": testcycle})
 
-def testcycle_add(request):
-    return render_to_response('testcycle_add.html',{},RequestContext(request))
-
-
-def testcycle_addsave(request):
-    name=request.POST['name']
-    description=request.POST['description']
-    website=request.POST['website']
-    testcycle=TestCycle()
-    testcycle.name=name
-    testcycle.description=description
-    testcycle.website=website
-    testcycle.save()
-    return HttpResponseRedirect("/crowd/")
 
 def testcycle_edit(request):
-    id=request.GET['id']
-    testcycle=TestCycle.objects.get(id=id)
+    id=request.GET.get('id')
+    if id:
+        testcycle=TestCycle.objects.get(id=id)
+    else:
+        testcycle=TestCycle()
     return render_to_response('testcycle_edit.html',{"testcycle":testcycle},RequestContext(request))
 
 
 def testcycle_editsave(request):
-    id=request.POST['id']
+    id=request.POST.get('id')
     name=request.POST['name']
     description=request.POST['description']
     website=request.POST['website']
-    testcycle=TestCycle.objects.get(id=id)
+    if id=='None':
+        testcycle=TestCycle()
+    else:
+        testcycle=TestCycle.objects.get(id=id)
     testcycle.name=name
     testcycle.description=description
     testcycle.website=website

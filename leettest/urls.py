@@ -17,14 +17,16 @@ urlpatterns = patterns('',
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
     
+    #config the website icon
     url(r'^favicon.ico$','django.views.generic.simple.redirect_to',{'url':'/static/images/favicon.ico'}),
+    
+    #config the website index
     url('^$','index.views.index'),
     
-    url(r'^blog/$','blog.views.blog_list'),
-    url(r'^crowd/$','crowd.views.testcycle_list'), 
-    url(r'^crowd/testcycle_show/$','crowd.views.testcycle_show'),  
-    url(r'^crowd/testcycle_edit/$','crowd.views.testcycle_edit'),  
-    url(r'^crowd/testcycle_editsave/$','crowd.views.testcycle_editsave'),  
-    url(r'^crowd/testcycle_delete/$','crowd.views.testcycle_delete'),  
+    #config for blog modules
+    url(r'^blog/',include('blog.urls')),
+    
+    #config for crowd modules
+    url(r'^crowd/',include('crowd.urls')),  
 )
 

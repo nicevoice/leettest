@@ -1,4 +1,3 @@
-from django.contrib import admin
 from django.db import models
 
 
@@ -9,6 +8,3 @@ class Tag(models.Model):
     def __unicode__(self):
         return self.tag_name
 
-    
-    
-admin.site.register(Tag)

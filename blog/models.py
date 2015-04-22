@@ -1,4 +1,3 @@
-from django.contrib import admin
 from django.db import models
 
 from public.models import Tag
@@ -32,7 +31,3 @@ class Article(models.Model):
     def __unicode__(self):
         return u'%s - %s - %s' % (self.caption,self.author,self.publish_time.strftime("%Y-%m-%d %H:%I:%S"))
     
-    
-admin.site.register(Category)
-admin.site.register(Author)
-admin.site.register(Article)

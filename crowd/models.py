@@ -1,4 +1,3 @@
-from django.contrib import admin
 from django.db import models
 
 class TestCycle(models.Model):
@@ -32,6 +31,3 @@ class TestBug(models.Model):
     def __unicode__(self):
         return self.name
     
-admin.site.register(TestCycle)
-admin.site.register(TestCase)
-admin.site.register(TestBug)

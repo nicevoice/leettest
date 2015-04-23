@@ -14,11 +14,13 @@ urlpatterns = patterns('',
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 
-    # Uncomment the next line to enable the admin:
-    url(r'^admin/', include(admin.site.urls)),
-    
     #config the website icon
     url(r'^favicon.ico$','django.views.generic.simple.redirect_to',{'url':'/static/images/favicon.ico'}),
+    
+    # Uncomment the next line to enable the admin:
+    url(r'^admin/', include(admin.site.urls)),
+        
+    url(r'^comments/', include('django.contrib.comments.urls')),
     
     #config the website index
     url('^$','index.views.index'),

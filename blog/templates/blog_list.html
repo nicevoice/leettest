@@ -23,7 +23,7 @@
 
           {% for article in articles%}
             <div class="blog-post">
-              <h2 class="blog-post-title">{{ article.caption }}</h2>
+              <h2 class="blog-post-title"><a href="show/?id={{ article.id }}">{{ article.caption }}</a></h2>
               <p class="blog-post-meta">{{ article.publish_time }} by {{ article.author }}</p>
               <PRE>
                 {{ article.content }}    

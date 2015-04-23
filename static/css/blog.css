@@ -151,3 +151,15 @@ h6, .h6 {
 .blog-footer p:last-child {
   margin-bottom: 0;
 }
+
+.blog-comment{
+  padding:20px;
+  margin:20px 0;
+  border:1px solid #eee;
+  border-left-width:5px;
+  border-radius:3px
+}
+
+.blog-comment-info{
+  border-left-color:#1b809e
+}

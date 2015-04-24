@@ -24,14 +24,12 @@
           {% for article in articles%}
             <div class="blog-post">
               <h2 class="blog-post-title"><a href="show/?id={{ article.id }}">{{ article.caption }}</a></h2>
-              <p class="blog-post-meta">{{ article.publish_time }} by {{ article.author }}</p>
-              <PRE>
-                {{ article.content }}    
-              </PRE>        
-            </div><!-- /.blog-post -->
+              <p class="blog-post-meta">{{ article.publish_time|date:"Y-m-d H:i" }} by {{ article.author }}</p>
+              <pre>
+              {{ article.content|safe}} 
+	          </pre> 
+	        </div><!-- /.blog-post -->
           {% endfor%}
-
-          
 
           <nav>
             <ul class="pager">
@@ -50,18 +48,18 @@
           <div class="sidebar-module">
             <h4>Archives</h4>
             <ol class="list-unstyled">
-              <li><a href="#">March 2014</a></li>
-              <li><a href="#">February 2014</a></li>
-              <li><a href="#">January 2014</a></li>
-              <li><a href="#">December 2013</a></li>
-              <li><a href="#">November 2013</a></li>
-              <li><a href="#">October 2013</a></li>
-              <li><a href="#">September 2013</a></li>
-              <li><a href="#">August 2013</a></li>
-              <li><a href="#">July 2013</a></li>
-              <li><a href="#">June 2013</a></li>
-              <li><a href="#">May 2013</a></li>
-              <li><a href="#">April 2013</a></li>
+              <li><a href="#">March 2015</a></li>
+              <li><a href="#">February 2015</a></li>
+              <li><a href="#">January 2015</a></li>
+              <li><a href="#">December 2014</a></li>
+              <li><a href="#">November 2014</a></li>
+              <li><a href="#">October 2014</a></li>
+              <li><a href="#">September 2014</a></li>
+              <li><a href="#">August 2014</a></li>
+              <li><a href="#">July 2014</a></li>
+              <li><a href="#">June 2014</a></li>
+              <li><a href="#">May 2014</a></li>
+              <li><a href="#">April 2014</a></li>
             </ol>
           </div>
           <div class="sidebar-module">

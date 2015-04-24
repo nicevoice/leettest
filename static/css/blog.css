@@ -163,3 +163,8 @@ h6, .h6 {
 .blog-comment-info{
   border-left-color:#1b809e
 }
+
+pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}

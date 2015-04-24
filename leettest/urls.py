@@ -22,6 +22,8 @@ urlpatterns = patterns('',
         
     url(r'^comments/', include('django.contrib.comments.urls')),
     
+    #url(r'^static/(?P<path>.*)$', 'django.views.static.serve',    {'document_root': 'media'}),
+    
     #config the website index
     url('^$','index.views.index'),
     

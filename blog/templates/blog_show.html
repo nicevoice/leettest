@@ -24,7 +24,7 @@
 	      		<p class="blog-post-meta">作者：<a href="#">{{ article.author }}</a> | 发表时间：{{ article.publish_time|date:"Y-m-d H:i" }}</p>
       			<hr>
 		     	<PRE>
-		      		<div class="blog_description">{{ article.content }}</div>
+		      		<div class="blog_description">{{ article.content|safe }}</div>
 		   		</PRE>
 	    	</div>
 	    	</div>

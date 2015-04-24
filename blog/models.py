@@ -29,5 +29,5 @@ class Article(models.Model):
     
     
     def __unicode__(self):
-        return u'%s - %s - %s' % (self.caption,self.author,self.publish_time.strftime("%Y-%m-%d %H:%I:%S"))
+        return u'%s - %s - %s' % (self.caption,self.author,self.update_time.strftime("%Y-%m-%d %H:%I:%S"))
     

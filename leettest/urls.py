@@ -31,6 +31,9 @@ urlpatterns = patterns('',
     url(r'^blog/',include('blog.urls')),
     
     #config for crowd modules
-    url(r'^crowd/',include('crowd.urls')),  
+    url(r'^crowd/',include('crowd.urls')),
+      
+    #config for tool modules
+    url(r'^tool/',include('tool.urls')),  
 )
 

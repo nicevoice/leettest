@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block active-tool %}
+  	class="active"
+{% endblock %}
+
+
+{% block css %}
+    <!-- Custom styles for this template -->
+    <link href="/static/css/blog.css" rel="stylesheet">
+{% endblock %}
+
+{% load comments %} 
+
+{% block content %}
+    <div class="container "> 
+    	<div class="row">
+			<div class="blog-main">
+			<div class="blog-post">	 
+				<p/> 
+
+      			<hr>
+	    		<div class="blog-post-title">{{ tool.name }}</div> 
+	      		<hr>
+		     	<PRE>
+		      		<div class="blog_description">{{ tool.description|safe }}</div>
+		   		</PRE>
+	    	</div>
+	    	</div>
+	    </div>	        
+  	</div>
+{% endblock %}

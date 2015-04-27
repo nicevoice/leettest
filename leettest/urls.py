@@ -1,6 +1,8 @@
 from django.conf.urls import patterns, url, include
 from django.contrib import admin
 
+from leettest import settings
+
 
 # Uncomment the next two lines to enable the admin:
 # from django.contrib import admin
@@ -21,6 +23,8 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
         
     url(r'^comments/', include('django.contrib.comments.urls')),
+    
+    (r'^site_media/(?P<path>.*)$', 'django.views.static.serve',{'document_root': settings.MEDIA_ROOT}),
     
     #url(r'^static/(?P<path>.*)$', 'django.views.static.serve',    {'document_root': 'media'}),
     

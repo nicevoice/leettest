@@ -21,24 +21,24 @@
 
         <div class="col-sm-8 blog-main">
 
-          {% for tool in tools%}
-            <div class="blog-post">
-              <h2 class="blog-post-title"><a href="show/?id={{ tool.id }}">{{ tool.name }}</a></h2>
-              <img src="{{ tool.logo.url }}" /> 
-              <pre>
-              {{ tool.description|safe|truncatechars:400}} 
-	          </pre> 
-	        </div><!-- /.blog-post -->
-          {% endfor%}
-
-          <nav>
-            <ul class="pager">
-              <li><a href="#">Previous</a></li>
-              <li><a href="#">Next</a></li>
-            </ul>
-          </nav>
-
-        </div><!-- /.blog-main -->
+	 		<div class="row">
+	 			{% for tool in tools%}
+		        <div class="col-md-4">
+		          <img class="img-rounded" src="{{ tool.logo.url }}" alt="Generic placeholder image" width="80" height="80">
+		          <h2 class="text-info">{{ tool.name }}</h2>
+		          <pre>{{ tool.summary|safe}}</pre>
+		          <p><a class="btn btn-default" href="show/?id={{ tool.id }}" role="button">View details &raquo;</a></p>
+		        </div><!-- /.col-md-4 -->
+		        {% endfor%}
+	      	</div><!-- /.row -->
+      	
+          	<nav>
+            	<ul class="pager">
+              		<li><a href="#">Previous</a></li>
+              		<li><a href="#">Next</a></li>
+            	</ul>
+          	</nav>
+		</div><!-- /.blog-main -->
 
         <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
           <div class="sidebar-module sidebar-module-inset">
@@ -81,4 +81,5 @@
       </p>
     </footer>
   </div>
+ 
 {% endblock %}

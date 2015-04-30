@@ -9,6 +9,28 @@
     <link href="/static/css/blog.css" rel="stylesheet">
 {% endblock %}
 
+{% block js %}
+<link href="/static/js/syntaxhighlighter/styles/shCore.css" type="text/css" rel="stylesheet"/>
+<link href="/static/js/syntaxhighlighter/styles/shThemeDjango.css" type="text/css" rel="stylesheet"/>
+<script type="text/javascript" src="/static/js/syntaxhighlighter/scripts/shCore.js"></script>
+<script type="text/javascript" src="/static/js/syntaxhighlighter/scripts/shBrushPython.js"></script>
+<script type="text/javascript" src="/static/js/syntaxhighlighter/scripts/shBrushXml.js"></script>
+<script type="text/javascript" src="/static/js/syntaxhighlighter/scripts/shBrushSql.js"></script>
+<script type="text/javascript" src="/static/js/syntaxhighlighter/scripts/shBrushJScript.js"></script>
+<script type="text/javascript" src="/static/js/syntaxhighlighter/scripts/shBrushJava.js"></script>
+<script type="text/javascript" src="/static/js/syntaxhighlighter/scripts/shBrushCss.js"></script>
+<script type="text/javascript" src="/static/js/syntaxhighlighter/scripts/shBrushCpp.js"></script>
+<script type="text/javascript" src="/static/js/syntaxhighlighter/scripts/shBrushPerl.js"></script>
+<script type="text/javascript" src="/static/js/syntaxhighlighter/scripts/shBrushBash.js"></script>
+<script type="text/javascript" src="/static/js/syntaxhighlighter/scripts/shBrushCSharp.js"></script>
+<script type="text/javascript" src="/static/js/syntaxhighlighter/scripts/shBrushPhp.js"></script>
+<script type="text/javascript" src="/static/js/syntaxhighlighter/scripts/shBrushPerl.js"></script>
+<script  type = "text/javascript">
+	SyntaxHighlighter.all();
+    SyntaxHighlighter.defaults['toolbar'] = false;
+</script>
+{% endblock %}
+
 {% load comments %} 
 
 {% block content %}
@@ -23,9 +45,7 @@
 	      		<p class="blog-post-meta">分类：<a href="#"><span class="label label-primary">{{ article.category }}</span></a></p>
 	      		<p class="blog-post-meta">作者：<a href="#">{{ article.author }}</a> | 发表时间：{{ article.publish_time|date:"Y-m-d H:i" }}</p>
       			<hr>
-		     	<PRE>
-		      		<div class="blog_description">{{ article.content|safe }}</div>
-		   		</PRE>
+		     	<PRE><div class="blog_description">{{ article.content|safe }}</div></PRE>
 	    	</div>
 	    	</div>
 	    </div>

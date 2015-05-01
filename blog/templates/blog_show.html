@@ -64,16 +64,15 @@
 		        	<div class="comments_body">
 		            	{% for comment in comments %}
 		            	<div class="blog-comment blog-comment-info">
-		              	<div class="comment_id"><a href="{{ comment.user_url }}"><img src="/static/images/hp.jpg" width="42" height="42" /></a></div>
 		              	<div class="cmt_user_info">
-		                	<span class="li_small_2">{{ comment.user_name }}</span>
+		                	<span class="li_small_2"><a href="{{ comment.user_url }}">{{ comment.user_name }}</a></span>
 		                	<span class="li_small_2">{{ comment.submit_date|date:"Y-m-d H:i"}}</span>
 		                	<span class="reply_comment" id="{{ comment.user_name }}"><a href="#newcomment">回复</a></span>
 		              	</div>
 		              	<div id="comment_content">{{ comment.comment }}</div>
 		            </div>
 	            {% endfor %}
-	      	{% endifequal %}
+	      	{% endifequal %}	      	
 	      </div>
 	            
 	      <div class="comments_nav"><h4><span class="label label-success">新的评论</span></h4></div>

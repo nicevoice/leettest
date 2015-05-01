@@ -7,15 +7,32 @@ from tool.models import Tool
 
 def tool_list(request):
     all_tools = Tool.objects.all()
-    p = Paginator(all_tools , 3)
-    page = request.GET.get('page') # Get page
+    
+    p = Paginator(all_tools , 7)
+    
+    try:
+        page = int(request.GET.get('page',1))
+        if page < 1:
+            page = 1
+    except ValueError:
+        page = 1  
+            
     try:
         tools = p.page(page)
     except PageNotAnInteger: 
         tools = p.page(1)
     except EmptyPage: 
         tools = p.page(p.num_pages)
-    return render_to_response('tool_list.html', {"tools": tools})
+        
+    after_range_num = 3
+    before_range_num = 2
+     
+    if page >= after_range_num:
+        page_range = p.page_range[page - after_range_num:page + before_range_num]
+    else:
+        page_range = p.page_range[0:page + before_range_num]
+        
+    return render_to_response('tool_list.html', locals())
 
 def tool_show(request):
     id=request.GET['id'];

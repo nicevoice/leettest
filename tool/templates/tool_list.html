@@ -33,11 +33,28 @@
 	      	</div><!-- /.row -->
       	
           	<nav>
-            	<ul class="pager">
-              		<li><a href="#">Previous</a></li>
-              		<li><a href="#">Next</a></li>
-            	</ul>
-          	</nav>
+	            <ul class="pager">
+	              	{% if tools.has_previous %}
+				    	<li><a href="?page={{ tools.previous_page_number }}">前一页</a></li>
+				    {% else %}
+				    	<li class="active"><a>前一页</a></li>
+				    {% endif %}
+				
+				    {% for p in page_range %}
+				      {% ifequal p page %}
+				      	<li class="active"><a>{{p}}</a></li>
+				      {% else %}
+				      	<li><a href="?page={{p}}" title="第{{p}}页">{{p}}</a><li>
+				      {% endifequal %}
+				    {% endfor %}
+				
+				    {% if articles.has_next %}
+				    	<li><a href="?page={{ articles.next_page_number }}">后一页</a></li>
+				    {% else %}
+				    	<li class="active"> <a>后一页</a></li>
+				    {% endif %}
+	            </ul>
+	          </nav>
 		</div><!-- /.blog-main -->
 
         <div class="col-sm-3 col-sm-offset-1 blog-sidebar">

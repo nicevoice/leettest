@@ -41,9 +41,14 @@
 				<p/> 
 
       			<hr>
-	    		<div class="blog-post-title">{{ article.caption }}</div> 
-	      		<p class="blog-post-meta">分类：<a href="#"><span class="label label-primary">{{ article.category }}</span></a></p>
-	      		<p class="blog-post-meta">作者：<a href="#">{{ article.author }}</a> | 发表时间：{{ article.publish_time|date:"Y-m-d H:i" }}</p>
+	    		<div class="blog-post-title col-sm-11">{{ article.caption }}</div> 	    		
+	    		<div class="col-sm-1">
+	    			<p><a class="btn btn-success" href="../" role="button">&laquo; 返回</a></p>
+		        </div>
+		        <div class="col-sm-12">
+	      			<p class="blog-post-meta">分类：<a href="#"><span class="label label-primary">{{ article.category }}</span></a></p>
+	      			<p class="blog-post-meta">作者：<a href="#">{{ article.author }}</a> | 发表时间：{{ article.publish_time|date:"Y-m-d H:i" }}</p>
+      			</div>
       			<hr>
 		     	<PRE><div class="blog_description">{{ article.content|safe }}</div></PRE>
 	    	</div>

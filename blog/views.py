@@ -6,14 +6,21 @@ from blog.models import Article, Category
 
 
 def blog_list(request):
-    categoryid = request.GET.get('categoryid')
     
-    if categoryid:
-        all_articles = Article.objects.filter(category__id=int(categoryid))  
-    else:
-        all_articles = Article.objects.all()
-        
+    all_articles = Article.objects.all().order_by("-publish_time")
+    
     categorys=Category.objects.all()
+    
+    for category in categorys:
+        category.article_num = 0
+        for article in all_articles:
+            if article.category == category:
+                category.article_num += 1
+        category.save()
+        
+    categoryid = request.GET.get('categoryid')    
+    if categoryid:
+        all_articles = Article.objects.filter(category__id=int(categoryid)).order_by("-publish_time") 
  
     p = Paginator(all_articles , 7)
     

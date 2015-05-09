@@ -67,7 +67,7 @@
             <h4>文章分类</h4>
             <ol class="list-unstyled">
              	{% for category in categorys %}
-              		<li><a href="?categoryid={{ category.id }}">{{category.name}}</a></li>
+              		<li><a href="?categoryid={{ category.id }}">{{category.name}}({{category.article_num}})</a></li>
           		{% endfor%}
             </ol>
           </div>

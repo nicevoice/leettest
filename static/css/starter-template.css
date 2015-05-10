@@ -5,3 +5,12 @@ body {
   padding: 40px 15px;
   text-align: center;
 }
+
+.footer-top .about>div h4 {
+  color: #039314;
+  font-size: 16px;
+}
+
+.footer ul a {
+  color: #777;
+}

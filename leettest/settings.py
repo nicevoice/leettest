@@ -36,7 +36,7 @@ TIME_ZONE = 'Asia/Shanghai'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
-LANGUAGE_CODE = 'zh-cn'
+LANGUAGE_CODE = 'zh-hans'
 
 SITE_ID = 1
 
@@ -133,6 +133,7 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_comments',
     'index',
     'blog',
     'public',
@@ -144,7 +145,7 @@ INSTALLED_APPS = (
     # 'django.contrib.admindocs',
     
     #django comment module
-    'django.contrib.comments',
+    #'django.contrib.comments',
 )
 
 # A sample logging configuration. The only tangible logging

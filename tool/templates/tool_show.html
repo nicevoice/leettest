@@ -9,8 +9,6 @@
     <link href="/static/css/blog.css" rel="stylesheet">
 {% endblock %}
 
-{% load comments %} 
-
 {% block content %}
     <div class="container "> 
     	<div class="row">
@@ -30,7 +28,7 @@
 	    			</blockquote>
 	    		</div> 
 	    		<div class="col-sm-1">
-	    		<p><a class="btn btn-success" href="../" role="button">&laquo; 返回</a></p>
+	    		<p><a class="btn btn-success" href="{% url 'tool:list' %}" role="button">&laquo; 返回</a></p>
 		        </div>
 	    		</row>
 	    		

@@ -20,7 +20,7 @@
       <div class="row">
 
         <div class="blog-main">
-          <a href="testcycle_edit">添加</a>
+          <a href="{% url 'crowd:testcycle_edit'%}">添加</a>
           {% for article in articles%}
             <div class="blog-post">
               <h2 class="blog-post-title">{{ article.caption }}</h2>
@@ -45,11 +45,11 @@
 			   <tbody>
 			   	{% for testcycle in testcycles%}
 			      <tr>
-			         <td><a href="testcycle_show?id={{testcycle.id}}">{{ testcycle.name }}</a></td>
+			         <td><a href="{% url 'crowd:testcycle_show' testcycle.id %}">{{ testcycle.name }}</a></td>
 			         <td>{{ testcycle.description }}</td>
 			         <td>{{ testcycle.website }}</td>
-               <td><a href="testcycle_edit?id={{testcycle.id}}">编辑</a> </td>
-               <td><a href="testcycle_delete?id={{testcycle.id}}">删除</a> </td>
+               <td><a href="{% url 'crowd:testcycle_edit' testcycle.id %}">编辑</a> </td>
+               <td><a href="{% url 'crowd:testcycle_delete' testcycle.id %}">删除</a> </td>
             </tr>
 			    {% endfor %}
 			   </tbody>

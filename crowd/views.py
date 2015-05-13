@@ -19,24 +19,21 @@ def testcycle_list(request):
         testcycles = p.page(p.num_pages)
     return render_to_response('testcycle_list.html', {"testcycles": testcycles,"page":page})
 
-def testcycle_show(request):
-    #tid = request.REQUEST.get('id')
-    id=request.GET['id'];
-    testcycle = TestCycle.objects.get(id=id)
+def testcycle_show(request,testcycle_id):
+    testcycle = TestCycle.objects.get(id=testcycle_id)
     return render_to_response('testcycle_show.html', {"testcycle": testcycle})
 
 
-def testcycle_edit(request):
-    id=request.GET.get('id')
-    if id:
-        testcycle=TestCycle.objects.get(id=id)
+def testcycle_edit(request,testcycle_id=None):    
+    if testcycle_id:
+        testcycle=TestCycle.objects.get(id=testcycle_id)
     else:
         testcycle=TestCycle()
     return render_to_response('testcycle_edit.html',{"testcycle":testcycle},RequestContext(request))
 
 
 def testcycle_editsave(request):
-    id=request.POST.get('id')
+    id=request.POST['id']
     name=request.POST['name']
     description=request.POST['description']
     website=request.POST['website']
@@ -51,10 +48,9 @@ def testcycle_editsave(request):
     return HttpResponseRedirect("/crowd/")
 
 
-def testcycle_delete(request):
-    id=request.GET['id'];
-    testcycle=TestCycle.objects.get(id=id)
+def testcycle_delete(request,testcycle_id):
+    testcycle=TestCycle.objects.get(id=testcycle_id)
     testcycle.delete()
-    return HttpResponseRedirect("/crowd/")
+    return testcycle_list(request)
 
 

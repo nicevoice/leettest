@@ -31,8 +31,6 @@
 </script>
 {% endblock %}
 
-{% load comments %} 
-
 {% block content %}
     <div class="container "> 
     	<div class="row">
@@ -43,7 +41,7 @@
       			<hr>
 	    		<div class="blog-post-title col-sm-11">{{ article.caption }}</div> 	    		
 	    		<div class="col-sm-1">
-	    			<p><a class="btn btn-success" href="../" role="button">&laquo; 返回</a></p>
+	    			<p><a class="btn btn-success" href="{% url 'blog:list' %}" role="button">&laquo; 返回</a></p>
 		        </div>
 		        <div class="col-sm-12">
 	      			<p class="blog-post-meta">分类：<a href="../?categoryid={{ article.category.id }}"><span class="label label-primary">{{ article.category }}</span></a></p>

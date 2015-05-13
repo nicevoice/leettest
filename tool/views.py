@@ -5,7 +5,7 @@ from django.template.context import RequestContext
 from tool.models import Tool
 
 
-def tool_list(request):
+def list(request):
     all_tools = Tool.objects.all()
     
     p = Paginator(all_tools , 7)
@@ -34,8 +34,7 @@ def tool_list(request):
         
     return render_to_response('tool_list.html', locals())
 
-def tool_show(request):
-    id=request.GET['id'];
-    tool = Tool.objects.get(id=id)
+def show(request,tool_id):
+    tool = Tool.objects.get(id=tool_id)
     return render_to_response('tool_show.html', {"tool": tool},context_instance=RequestContext(request))
 

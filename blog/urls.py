@@ -3,6 +3,6 @@ from blog import views
 
 
 urlpatterns = [
-   url(r'^$',views.blog_list),
-    url(r'^show/$',views.blog_show),
+   url(r'^$',views.list,name='list'),
+   url(r'^(?P<article_id>[0-9]+)/$',views.show,name='show'),
 ]

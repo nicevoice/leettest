@@ -5,7 +5,7 @@ from django.template.context import RequestContext
 from blog.models import Article, Category
 
 
-def blog_list(request):
+def list(request):
     
     all_articles = Article.objects.all().order_by("-publish_time")
     
@@ -47,10 +47,9 @@ def blog_list(request):
         page_range = p.page_range[0:page + before_range_num]
         
         
-    return render_to_response('blog_list.html',locals())
+    return render_to_response('article_list.html',locals())
 
-def blog_show(request):
-    id=request.GET['id']
-    article = Article.objects.get(id=id)
-    return render_to_response('blog_show.html', {"article": article},context_instance=RequestContext(request))
+def show(request,article_id):
+    article = Article.objects.get(id=article_id)
+    return render_to_response('article_show.html', {"article": article},context_instance=RequestContext(request))
 

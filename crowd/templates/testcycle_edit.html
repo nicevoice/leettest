@@ -11,7 +11,7 @@
 
 {% block content %}
     <div class="container"> 
-		<form action="../testcycle_editsave/" method="post">
+		<form action="{% url 'crowd:testcycle_editsave'%}" method="post">
       {% csrf_token %}
       		<input name="id" type="hidden" value="{{testcycle.id}}" ><br/>
 			请输入名字<input name="name" type="text" value= {{testcycle.name}}><br/>

@@ -36,10 +36,10 @@ def list(request):
         
     return render_to_response('tool_list.html', locals())
 
-def show(request,tool_id):
+def detail(request,tool_id):
     try:
         tool = Tool.objects.get(id=tool_id)        
     except Tool.DoesNotExist:
         raise Http404("工具不存在！")
-    return render_to_response('tool_show.html', {"tool": tool},context_instance=RequestContext(request))
+    return render_to_response('tool_detail.html', {"tool": tool},context_instance=RequestContext(request))
 

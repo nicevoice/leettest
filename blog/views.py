@@ -50,10 +50,10 @@ def list(request):
         
     return render_to_response('article_list.html',locals())
 
-def show(request,article_id):
+def detail(request,article_id):
     try:
         article = Article.objects.get(id=article_id)
     except Article.DoesNotExist:
         raise Http404("文章不存在!")
-    return render_to_response('article_show.html', {"article": article},context_instance=RequestContext(request))
+    return render_to_response('article_detail.html', {"article": article},context_instance=RequestContext(request))
 

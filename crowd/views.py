@@ -22,12 +22,12 @@ def testcycle_list(request):
         testcycles = p.page(p.num_pages)
     return render_to_response('testcycle_list.html', {"testcycles": testcycles,"page":page})
 
-def testcycle_show(request,testcycle_id):
+def testcycle_detail(request,testcycle_id):
     try:
         testcycle = TestCycle.objects.get(id=testcycle_id)
     except TestCycle.DoesNotExist:
         raise Http404("TestCycle不存在！")
-    return render_to_response('testcycle_show.html', {"testcycle": testcycle})
+    return render_to_response('testcycle_detail.html', {"testcycle": testcycle})
 
 
 def testcycle_edit(request,testcycle_id=None):    

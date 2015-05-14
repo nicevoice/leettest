@@ -45,7 +45,7 @@
 			   <tbody>
 			   	{% for testcycle in testcycles%}
 			      <tr>
-			         <td><a href="{% url 'crowd:testcycle_show' testcycle.id %}">{{ testcycle.name }}</a></td>
+			         <td><a href="{% url 'crowd:testcycle_detail' testcycle.id %}">{{ testcycle.name }}</a></td>
 			         <td>{{ testcycle.description }}</td>
 			         <td>{{ testcycle.website }}</td>
                <td><a href="{% url 'crowd:testcycle_edit' testcycle.id %}">编辑</a> </td>

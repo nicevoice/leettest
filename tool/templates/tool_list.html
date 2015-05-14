@@ -27,7 +27,7 @@
 		          <img class="img-rounded" src="{{ tool.logo.url }}" alt="Generic placeholder image" width="80" height="80">
 		          <h2 class="text-info">{{ tool.name }}</h2>
 		          <pre>{{ tool.summary|safe}}</pre>
-		          <p><a class="btn btn-default" href="{% url 'tool:show' tool.id %}" role="button">View details &raquo;</a></p>
+		          <p><a class="btn btn-default" href="{% url 'tool:detail' tool.id %}" role="button">View details &raquo;</a></p>
 		        </div><!-- /.col-md-4 -->
 		        {% endfor%}
 	      	</div><!-- /.row -->

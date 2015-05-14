@@ -51,6 +51,10 @@
 		     	<div class="col-sm-12" class="blog_description"><PRE>{{ article.content|safe }}</PRE></div>
 	    	</div>
 	    	</div>
-	    </div> 
+	    </div>
+	    <div class="row">
+	    	{% load duoshuo_tags %}
+			{% duoshuo_comments %}
+		</div>
   	</div>
 {% endblock %}

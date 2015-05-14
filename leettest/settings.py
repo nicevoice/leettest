@@ -44,6 +44,7 @@ INSTALLED_APPS = (
     'public',
     'crowd',
     'tool',
+    'duoshuo'
 )
 
 MIDDLEWARE_CLASSES = (
@@ -108,8 +109,6 @@ MEDIA_URL = '/site_media/'
 # Example: "/home/media/media.lawrence.com/static/"
 STATIC_ROOT = os.path.join(BASE_DIR,'static')
 
-print STATIC_ROOT
-
 # URL prefix for static files.
 STATIC_URL = '/static/'
 
@@ -134,3 +133,6 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+
+DUOSHUO_SECRET = 'Your DuoShuo SECRET'
+DUOSHUO_SHORT_NAME = 'leettest'

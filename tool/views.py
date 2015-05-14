@@ -1,6 +1,8 @@
+#coding=utf-8
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.shortcuts import render_to_response
 from django.template.context import RequestContext
+from django.http import Http404
 
 from tool.models import Tool
 
@@ -35,6 +37,9 @@ def list(request):
     return render_to_response('tool_list.html', locals())
 
 def show(request,tool_id):
-    tool = Tool.objects.get(id=tool_id)
+    try:
+        tool = Tool.objects.get(id=tool_id)        
+    except Tool.DoesNotExist:
+        raise Http404("工具不存在！")
     return render_to_response('tool_show.html', {"tool": tool},context_instance=RequestContext(request))
 

@@ -1,8 +1,11 @@
+#coding=utf-8
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
+from django.core.urlresolvers import reverse
 from django.http import HttpResponseRedirect
 from django.shortcuts import render_to_response
 from django.template.context import RequestContext
 from django.views.decorators.csrf import csrf_exempt
+from django.http import Http404
 
 from crowd.models import TestCycle
 
@@ -20,7 +23,10 @@ def testcycle_list(request):
     return render_to_response('testcycle_list.html', {"testcycles": testcycles,"page":page})
 
 def testcycle_show(request,testcycle_id):
-    testcycle = TestCycle.objects.get(id=testcycle_id)
+    try:
+        testcycle = TestCycle.objects.get(id=testcycle_id)
+    except TestCycle.DoesNotExist:
+        raise Http404("TestCycle不存在！")
     return render_to_response('testcycle_show.html', {"testcycle": testcycle})
 
 
@@ -45,12 +51,18 @@ def testcycle_editsave(request):
     testcycle.description=description
     testcycle.website=website
     testcycle.save()
-    return HttpResponseRedirect("/crowd/")
+    
+    return HttpResponseRedirect(reverse('crowd:testcycle_list'))
+    #return HttpResponseRedirect("/crowd/")
 
 
 def testcycle_delete(request,testcycle_id):
-    testcycle=TestCycle.objects.get(id=testcycle_id)
-    testcycle.delete()
-    return testcycle_list(request)
+    try:
+        testcycle=TestCycle.objects.get(id=testcycle_id)
+        testcycle.delete()    
+    except TestCycle.DoesNotExist:
+        raise Http404("TestCycle不存在！")
+    #return testcycle_list(request)
+    return HttpResponseRedirect(reverse('crowd:testcycle_list'))
 
 

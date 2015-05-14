@@ -26,6 +26,8 @@ SECRET_KEY = '1%_=-1^fzkt3jypmt_gwr^2jo_x3q4(2hb#%itj7*e=to5c1%1'
 DEBUG = True
 
 ALLOWED_HOSTS = []
+#ALLOWED_HOSTS need to be configed when DEBUG=FALSE
+#ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -105,6 +107,8 @@ MEDIA_URL = '/site_media/'
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/home/media/media.lawrence.com/static/"
 STATIC_ROOT = os.path.join(BASE_DIR,'static')
+
+print STATIC_ROOT
 
 # URL prefix for static files.
 STATIC_URL = '/static/'

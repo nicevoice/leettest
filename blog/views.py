@@ -1,6 +1,8 @@
+#coding=utf-8
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.shortcuts import render_to_response
 from django.template.context import RequestContext
+from django.http import Http404
 
 from blog.models import Article, Category
 
@@ -44,12 +46,14 @@ def list(request):
     if page >= after_range_num:
         page_range = p.page_range[page - after_range_num:page + before_range_num]
     else:
-        page_range = p.page_range[0:page + before_range_num]
-        
+        page_range = p.page_range[0:page + before_range_num]        
         
     return render_to_response('article_list.html',locals())
 
 def show(request,article_id):
-    article = Article.objects.get(id=article_id)
+    try:
+        article = Article.objects.get(id=article_id)
+    except Article.DoesNotExist:
+        raise Http404("文章不存在!")
     return render_to_response('article_show.html', {"article": article},context_instance=RequestContext(request))
 

@@ -31,3 +31,11 @@ urlpatterns = patterns('',
     url(r'^crowd/',include('crowd.urls',namespace='crowd')),
 )
 
+#add static resources config when settings.DEBUG=FALSE
+from django.conf import settings 
+if settings.DEBUG is False:
+    urlpatterns += patterns('',
+        url(r'^static/(?P<path>.*)$', 'django.views.static.serve', { 'document_root': settings.STATIC_ROOT,
+        }),
+    )
+

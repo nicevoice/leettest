@@ -1,6 +1,7 @@
-#Thu May 14 14:50:49 CST 2015
+#Mon May 18 11:20:33 CST 2015
 eclipse.preferences.version=1
 encoding//blog/views.py=utf-8
 encoding//crowd/views.py=utf-8
 encoding//tool/models.py=utf-8
 encoding//tool/views.py=utf-8
+encoding/<project>=UTF-8

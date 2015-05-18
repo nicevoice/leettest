@@ -10,18 +10,20 @@
 {% endblock %}
 
 {% block content %}
-    <div class="container">
 
-      <div class="blog-header">
+    <div class="blog-header">
         <h1 class="blog-title">The LeetTest Blog</h1>
         <p class="lead blog-description">记录软件测试....</p>
-      </div>
+    </div>
 
+    <div class="container">
       <div class="row">
-
         <div class="col-sm-8 blog-main">
 
+          <p/> 
           {% for article in articles%}
+          
+            <hr>
             <div class="blog-post">
               <h2 class="blog-post-title"><a href="{% url 'blog:detail' article.id %}">{{ article.caption }}</a></h2>
               <p class="blog-post-meta">{{ article.publish_time|date:"Y-m-d H:i" }} by {{ article.author }}</p>
@@ -67,16 +69,16 @@
             <h4>文章分类</h4>
             <ol class="list-unstyled">
              	{% for category in categorys %}
-              		<li><a href="?categoryid={{ category.id }}">{{category.name}}({{category.article_num}})</a></li>
+              		<li><a href="?categoryid={{ category.id }}">{{category.name}}&nbsp;&nbsp;<span class="badge">&nbsp;{{category.article_num}}&nbsp;</span></a></li>
           		{% endfor%}
             </ol>
           </div>
           <div class="sidebar-module">
             <h4>相关链接</h4>
             <ol class="list-unstyled">
-              <li><a href="https://github.com/buaawp">GitHub</a></li>
-              <li><a href="https://my.utest.com/platform/profile/dcb432b29d3d11e4bf8522000aa410c3">uTest</a></li>
-              <li><a href="http://cn.linkedin.com/in/buaawp">LinkedIn</a></li>
+              <li><a href="https://github.com/buaawp"><img src="https://assets-cdn.github.com/favicon.ico" /> GitHub</a></li>
+              <li><a href="https://my.utest.com/platform/profile/dcb432b29d3d11e4bf8522000aa410c3"><img src="http://www.utest.com/sites/all/themes/uTestX/favicon.ico" /> uTest</a></li>
+              <li><a href="http://cn.linkedin.com/in/buaawp"><img src="http://s.c.lnkd.licdn.com/scds/common/u/images/logos/favicons/v1/favicon.ico" /> LinkedIn</a></li>
             </ol>
           </div>
         </div><!-- /.blog-sidebar -->

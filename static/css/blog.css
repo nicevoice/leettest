@@ -66,8 +66,10 @@ h6, .h6 {
  */
 
 .blog-header {
-  padding-top: 40px;
+  padding-top: 20px;
   padding-bottom: 20px;
+  background: url(/static/images/banner1.png) repeat 0 0;
+  background-size:100% 100%;
 }
 .blog-title {
   margin-top: 30px;

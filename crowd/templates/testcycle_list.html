@@ -10,15 +10,13 @@
 {% endblock %}
 
 {% block content %}
-    <div class="container">
-
       <div class="blog-header">
-        <h1 class="blog-title">The LeetTest Blog</h1>
+        <h1 class="blog-title">The LeetTest Crowd</h1>
         <p class="lead blog-description">记录软件测试....</p>
       </div>
 
+    <div class="container">
       <div class="row">
-
         <div class="blog-main">
           <a href="{% url 'crowd:testcycle_edit'%}">添加</a>
           {% for article in articles%}

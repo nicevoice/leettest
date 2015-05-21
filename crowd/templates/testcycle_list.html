@@ -6,30 +6,30 @@
 
 {% block css %}
     <!-- Custom styles for this template -->
-    <link href="/static/css/blog.css" rel="stylesheet">
+    <link href="/static/css/crowd.css" rel="stylesheet">
 {% endblock %}
 
 {% block content %}
 
-    <div class="blog-header" >
-        <h1 class="blog-title">The LeetTest Crowd</h1>
-        <p class="lead blog-description">记录软件测试....</p>
+    <div class="crowd-header" >
+        <h1 class="crowd-title">The LeetTest Crowd</h1>
+        <p class="lead crowd-description">记录软件测试....</p>
     </div>
 
     <div class="container">
       <div class="row">
-        <div class="blog-main">
+        <div class="crowd-main">
           <a href="{% url 'crowd:testcycle_edit'%}">添加</a>
           {% for article in articles%}
-            <div class="blog-post">
-              <h2 class="blog-post-title">{{ article.caption }}</h2>
-              <p class="blog-post-meta">{{ article.publish_time }} by {{ article.author }}</p>
+            <div class="crowd-post">
+              <h2 class="crowd-post-title">{{ article.caption }}</h2>
+              <p class="crowd-post-meta">{{ article.publish_time }} by {{ article.author }}</p>
               <PRE>
                 {{ article.content }}    
               </PRE>        
-            </div><!-- /.blog-post -->
+            </div><!-- /.crowd-post -->
           {% endfor%}
-		    </div><!-- /.blog-main -->
+		    </div><!-- /.crowd-main -->
       </div><!-- /.row -->
 
       <div class="row">
@@ -57,7 +57,7 @@
 			  </table>
       </div><!-- /.row -->
 
-      <footer class="blog-footer">      
+      <footer class="crowd-footer">      
         <p>
           <a href="#">Back to top</a>
         </p>

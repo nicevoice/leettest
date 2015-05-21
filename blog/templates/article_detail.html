@@ -54,7 +54,9 @@
 	      			<p class="blog-post-meta">作者：<a href="#">{{ article.author }}</a> | 发表时间：{{ article.publish_time|date:"Y-m-d H:i" }}</p>
       			</div>
       			<hr>
-		     	<div class="col-sm-12" class="blog_description"><PRE>{{ article.content|safe }}</PRE></div>
+		     	<div class="col-sm-12">
+		     		<PRE>{{ article.content|safe }}</PRE>
+		     	</div>
 	    	</div>
 	    	</div>
 	    </div>
@@ -62,5 +64,11 @@
 	    	{% load duoshuo_tags %}
 			{% duoshuo_comments %}
 		</div>
+
+	  	<footer class="blog-footer">      
+	      <p>
+	          <a class="btn btn-success" href="#">Back to top</a>
+	      </p>
+	    </footer>
   	</div>
 {% endblock %}

@@ -22,31 +22,31 @@ h6, .h6 {
  * Masthead for nav
  */
 
-.blog-masthead {
+.crowd-masthead {
   background-color: #428bca;
   -webkit-box-shadow: inset 0 -2px 5px rgba(0,0,0,.1);
           box-shadow: inset 0 -2px 5px rgba(0,0,0,.1);
 }
 
 /* Nav links */
-.blog-nav-item {
+.crowd-nav-item {
   position: relative;
   display: inline-block;
   padding: 10px;
   font-weight: 500;
   color: #cdddeb;
 }
-.blog-nav-item:hover,
-.blog-nav-item:focus {
+.crowd-nav-item:hover,
+.crowd-nav-item:focus {
   color: #fff;
   text-decoration: none;
 }
 
 /* Active state gets a caret at the bottom */
-.blog-nav .active {
+.crowd-nav .active {
   color: #fff;
 }
-.blog-nav .active:after {
+.crowd-nav .active:after {
   position: absolute;
   bottom: 0;
   left: 50%;
@@ -63,22 +63,22 @@ h6, .h6 {
 
 
 /*
- * Blog name and description
+ * crowd name and description
  */
 
-.blog-header {
+.crowd-header {
   padding-top: 20px;
   padding-bottom: 20px;
   background: url(/static/images/banner0.png) repeat 0 0;
   background-size:100% 100%;
 }
-.blog-title {
+.crowd-title {
   margin-top: 30px;
   margin-bottom: 0;
   font-size: 60px;
   font-weight: normal;
 }
-.blog-description {
+.crowd-description {
   font-size: 20px;
   color: #999;
 }
@@ -88,7 +88,7 @@ h6, .h6 {
  * Main column and sidebar layout
  */
 
-.blog-main {
+.crowd-main {
   font-size: 18px;
   line-height: 1.5;
 }
@@ -97,62 +97,30 @@ h6, .h6 {
 .sidebar-module {
   padding: 15px;
   margin: 0 -15px 15px;
-
-  background-color: #f9f9f9;
 }
-
 .sidebar-module-inset {
   padding: 15px;
   background-color: #f5f5f5;
   border-radius: 4px;
 }
-
 .sidebar-module-inset p:last-child,
 .sidebar-module-inset ul:last-child,
 .sidebar-module-inset ol:last-child {
   margin-bottom: 0;
 }
 
-/*
- * Blog posts
- */
-
-.blog-post {
-  margin-bottom: 40px;
-}
-.blog-post-title {
-  margin-bottom: 5px;
-  font-size: 32px;
-
-}
-.blog-post-meta {
-  margin-bottom: 20px;
-  color: #999;
-}
-
-.blog-post pre {
-  white-space: pre-wrap;
-  word-wrap: break-word;
-  border-width:0px;
-  border-left-width:4px;
-  border-left-color: #228B22;
-  border-radius:3px;
-  background-color: #FFFFFF;
-  
-}
-
 
 /* Pagination */
 .pager {
-  margin-bottom: 20px;
+  margin-bottom: 40px;
   text-align: left;
 }
 
 .pager > li > a {
-  width: 80px;
-  padding: 2px 10px;
+  width: 140px;
+  padding: 10px 20px;
   text-align: center;
-  border-radius: 20px; /*按钮圆角*/
+  border-radius: 30px; /*按钮圆角*/
 }
 
 .active{
@@ -161,11 +129,29 @@ h6, .h6 {
 }
 
 
+
+/*
+ * crowd posts
+ */
+
+.crowd-post {
+  margin-bottom: 40px;
+}
+.crowd-post-title {
+  margin-bottom: 5px;
+  font-size: 40px;
+}
+.crowd-post-meta {
+  margin-bottom: 20px;
+  color: #999;
+}
+
+
 /*
  * Footer
  */
 
-.blog-footer {
+.crowd-footer {
   padding: 12px 0;
   color: #999;
   text-align: center;
@@ -173,8 +159,23 @@ h6, .h6 {
   border-top: 1px solid #e5e5e5;
 }
 
-.blog-footer p:last-child {
+.crowd-footer p:last-child {
   margin-bottom: 0;
 }
 
+.crowd-comment{
+  padding:20px;
+  margin:20px 0;
+  border:1px solid #eee;
+  border-left-width:5px;
+  border-radius:3px
+}
 
+.crowd-comment-info{
+  border-left-color:#1b809e
+}
+
+pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}

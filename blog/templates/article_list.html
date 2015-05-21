@@ -21,66 +21,70 @@
         <div class="col-sm-8 blog-main">
 
           <p/> 
-          {% for article in articles%}
           
+          {% for article in articles%}          
             <hr>
             <div class="blog-post">
               <h2 class="blog-post-title"><a href="{% url 'blog:detail' article.id %}">{{ article.caption }}</a></h2>
               <p class="blog-post-meta">{{ article.publish_time|date:"Y-m-d H:i" }} by {{ article.author }}</p>
               <pre>
-              {{ article.content|safe|truncatechars_html:400}} 
-	          </pre> 
-	        </div><!-- /.blog-post -->
+                {{ article.content|safe|truncatechars_html:400}} 
+	            </pre> 
+	          </div><!-- /.blog-post -->
           {% endfor%}
 
           <nav>
             <ul class="pager">
               	{% if articles.has_previous %}
-			    	<li><a href="?page={{ articles.previous_page_number }}">前一页</a></li>
-			    {% else %}
-			    	<li><a class="active">前一页</a></li>
-			    {% endif %}
-			
-			    {% for p in page_range %}
-			      {% ifequal p page %}
-			      	<li><a class="active">{{p}}</a></li>
-			      {% else %}
-			      	<li><a href="?page={{p}}" title="第{{p}}页">{{p}}</a><li>
-			      {% endifequal %}
-			    {% endfor %}
-			
-			    {% if articles.has_next %}
-			    	<li><a href="?page={{ articles.next_page_number }}">后一页</a></li>
-			    {% else %}
-			    	<li> <a class="active">后一页</a></li>
-			    {% endif %}
+			    	      <li><a href="?page={{ articles.previous_page_number }}">前一页</a></li>
+      			    {% else %}
+      			    	<li><a class="active">前一页</a></li>
+      			    {% endif %}
+      			
+      			    {% for p in page_range %}
+      			      {% ifequal p page %}
+      			      	<li><a class="active">{{p}}</a></li>
+      			      {% else %}
+      			      	<li><a href="?page={{p}}" title="第{{p}}页">{{p}}</a><li>
+      			      {% endifequal %}
+      			    {% endfor %}
+      			
+      			    {% if articles.has_next %}
+      			    	<li><a href="?page={{ articles.next_page_number }}">后一页</a></li>
+      			    {% else %}
+      			    	<li> <a class="active">后一页</a></li>
+      			    {% endif %}
             </ul>
           </nav>
 
         </div><!-- /.blog-main -->
 
         <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+          <p/>
           <div class="sidebar-module sidebar-module-inset">
             <h4>关于作者</h4>
             <p>软件测试七年工作经验。从事软件测试、软件测试工具开发、软件测试信息系统开发，做过ruby、java、python。写过web系统、当过项目经理、带过研发团队。</p>
             <p>2015年主要研究django。</p>
           </div>
+
           <div class="sidebar-module">
             <h4>文章分类</h4>
-            <ol class="list-unstyled">
+            <ul class="list-unstyled">
              	{% for category in categorys %}
               		<li><a href="?categoryid={{ category.id }}">{{category.name}}&nbsp;&nbsp;<span class="badge">&nbsp;{{category.article_num}}&nbsp;</span></a></li>
           		{% endfor%}
-            </ol>
+            </ul>
           </div>
+
           <div class="sidebar-module">
             <h4>相关链接</h4>
             <ol class="list-unstyled">
-              <li><a target="_blank" href="https://github.com/buaawp" ><img src="https://assets-cdn.github.com/favicon.ico" /> GitHub</a></li>
-              <li><a target="_blank" href="https://my.utest.com/platform/profile/dcb432b29d3d11e4bf8522000aa410c3"><img src="http://www.utest.com/sites/all/themes/uTestX/favicon.ico" /> uTest</a></li>
-              <li><a target="_blank" href="http://cn.linkedin.com/in/buaawp"><img src="http://s.c.lnkd.licdn.com/scds/common/u/images/logos/favicons/v1/favicon.ico" /> LinkedIn</a></li>
+              <li><a target="_blank" href="https://github.com/buaawp" ><img src="/static/images/web-icon/github.ico" /> GitHub</a></li>
+              <li><a target="_blank" href="https://my.utest.com/platform/profile/dcb432b29d3d11e4bf8522000aa410c3"><img src="/static/images/web-icon/utest.ico" /> uTest</a></li>
+              <li><a target="_blank" href="http://cn.linkedin.com/in/buaawp"><img src="/static/images/web-icon/linkedin.ico" /> LinkedIn</a></li>
+              <li><a target="_blank" href="http://www.zhihu.com/people/buaawp"><img src="/static/images/web-icon/zhihu.ico" /> 知乎</a></li>
             </ol>
-          </div>
+          </div>          
         </div><!-- /.blog-sidebar -->
 
       </div><!-- /.row -->
@@ -88,8 +92,9 @@
 
     <footer class="blog-footer">      
       <p>
-        <a href="#">Back to top</a>
+        <a class="btn btn-success" href="#">Back to top</a>
       </p>
     </footer>
+
   </div>
 {% endblock %}

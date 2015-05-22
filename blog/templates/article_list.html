@@ -9,6 +9,11 @@
     <link href="/static/css/blog.css" rel="stylesheet">
 {% endblock %}
 
+{% block js %}
+    <script src="/static/js/jquery.min.js"></script>    
+    <script src="/static/js/scrollTop.js"></script>    
+{% endblock %}
+
 {% block content %}
 
     <div class="blog-header"  style="background: url(/static/images/banner0.png) ;background-size:100% 100%;">
@@ -90,11 +95,19 @@
       </div><!-- /.row -->
 
 
+
+  
+
     <footer class="blog-footer">      
       <p>
-        <a class="btn btn-success" href="#">Back to top</a>
+        
       </p>
     </footer>
 
   </div>
+
+{% endblock %}
+
+{%block page_footer%}
+    <div class="gotop btn btn-success" id="gotobg" title="Scroll To Top">&and;</div>
 {% endblock %}

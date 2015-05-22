@@ -183,3 +183,19 @@ h6, .h6 {
 }
 
 
+
+
+.gotop{  
+  display:none;
+  left: 80%;
+  bottom:30px;
+  position:fixed;
+  z-index: 200;
+  filter:alpha(opacity=80); /*IE滤镜，透明度70%*/
+  -moz-opacity:0.8; /*Firefox私有，透明度70%*/
+  opacity:0.8;/*其他，透明度70%*/
+  font-weight:bold;
+}
+
+
+

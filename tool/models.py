@@ -7,6 +7,7 @@ class Tool(models.Model):
     description=models.TextField()
     logo=models.ImageField(upload_to='photos')
     picture=models.ImageField(upload_to='photos')   
+    url=models.CharField(max_length=200)
     
     def __unicode__(self):
         return self.name

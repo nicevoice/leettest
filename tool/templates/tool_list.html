@@ -11,94 +11,55 @@
 
 {% block content %}
 
-    <div class="tool-header" >
-      <h1 class="tool-title">The LeetTest Tool</h1>
-      <p class="lead tool-description">记录软件测试工具....</p>
+  <div class="tool-header" >
+    <h1 class="tool-title">The LeetTest Tool</h1>
+    <p class="lead tool-description">记录软件测试工具....</p>
+  </div>
+
+  <div class="container">
+
+  <div class="row">
+
+
+    <h3>软件测试工具</h3>
+    <div class="col-sm-3 soft_sidebar">
+        <div class="soft_sidebar">
+            <div class="submit_a_new_tool"> <a class="btn btn-success" href="#">提交新工具</a> </div>
+            <div class="soft_tags">
+               <h3>标签</h3>    
+               <p>
+                    <a class="tag tag_cur"href="#" title="全部">全部<em>(10)</em></a>
+                    <a class="tag"href="#" title="标注工具">标注工具<em>(1)</em></a>
+               </p>
+            </div>
+        </div>
     </div>
 
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-8 tool-main">
-          <p/>
-          <hr>
-  	 		  <div class="row">
-  	 			  {% for tool in tools%}
-  		        <div class="col-md-4">
-  		          <img class="img-rounded" src="{{ tool.logo.url }}" alt="Generic placeholder image" width="80" height="80">
-  		          <h2 class="text-info">{{ tool.name }}</h2>
-  		          <pre>{{ tool.summary|safe}}</pre>
-  		          <p><a class="btn btn-default" href="{% url 'tool:detail' tool.id %}" role="button">View details &raquo;</a></p>
-  		        </div><!-- /.col-md-4 -->
-  		      {% endfor%}
-  	      </div><!-- /.row -->
-        	
-          <nav>
-            <ul class="pager">
-            	{% if tools.has_previous %}
-  				    	<li><a href="?page={{ tools.previous_page_number }}">前一页</a></li>
-  				    {% else %}
-  				    	<li class="active"><a>前一页</a></li>
-  				    {% endif %}
-  				
-  				    {% for p in page_range %}
-  				      {% ifequal p page %}
-  				      	<li class="active"><a>{{p}}</a></li>
-  				      {% else %}
-  				      	<li><a href="?page={{p}}" title="第{{p}}页">{{p}}</a><li>
-  				      {% endifequal %}
-  				    {% endfor %}
-  				
-  				    {% if articles.has_next %}
-  				    	<li><a href="?page={{ articles.next_page_number }}">后一页</a></li>
-  				    {% else %}
-  				    	<li class="active"> <a>后一页</a></li>
-  				    {% endif %}
-            </ul>
-          </nav>
-  		  </div><!-- /.tool-main -->
+    <div class="col-sm-9 soft_list">
+       
+          {% for tool in tools%}
+            <div class="soft_box">
+              <div><h4>{{ tool.name }}</h4></div>
+              <div class="soft_box_front">
+                <img src="{{ tool.logo.url }}" alt="">
+              </div>
+              <div class="soft_box_back">
+                <p>{{ tool.summary|safe}}</p>
+                <a href="{% url 'tool:detail' tool.id %}" target="_blank">Learn More</a>
+              </div>
 
-        <div class="col-sm-3 col-sm-offset-1 tool-sidebar">
-          <p>
-          <div class="sidebar-module sidebar-module-inset">
-            <h4>About</h4>
-            <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
-          </div>
-          <div class="sidebar-module">
-            <h4>Archives</h4>
-            <ol class="list-unstyled">
-              <li><a href="#">March 2015</a></li>
-              <li><a href="#">February 2015</a></li>
-              <li><a href="#">January 2015</a></li>
-              <li><a href="#">December 2014</a></li>
-              <li><a href="#">November 2014</a></li>
-              <li><a href="#">October 2014</a></li>
-              <li><a href="#">September 2014</a></li>
-              <li><a href="#">August 2014</a></li>
-              <li><a href="#">July 2014</a></li>
-              <li><a href="#">June 2014</a></li>
-              <li><a href="#">May 2014</a></li>
-              <li><a href="#">April 2014</a></li>
-            </ol>
-          </div>
-          <div class="sidebar-module">
-            <h4>相关链接</h4>
-            <ol class="list-unstyled">
-              <li><a target="_blank" href="https://github.com/buaawp" ><img src="/static/images/web-icon/github.ico" /> GitHub</a></li>
-              <li><a target="_blank" href="https://my.utest.com/platform/profile/dcb432b29d3d11e4bf8522000aa410c3"><img src="/static/images/web-icon/utest.ico" /> uTest</a></li>
-              <li><a target="_blank" href="http://cn.linkedin.com/in/buaawp"><img src="/static/images/web-icon/linkedin.ico" /> LinkedIn</a></li>
-              <li><a target="_blank" href="http://www.zhihu.com/people/buaawp"><img src="/static/images/web-icon/zhihu.ico" /> 知乎</a></li>
-            </ol>
-          </div>    
-        </div><!-- /.tool-sidebar -->
+            </div><!-- /.col-md-4 -->
+          {% endfor%}  
+    </div>
 
-      </div><!-- /.row -->
-
+  </div>
 
     <footer class="tool-footer">      
       <p>
         <a href="#">Back to top</a>
       </p>
     </footer>
+
   </div>
  
 {% endblock %}

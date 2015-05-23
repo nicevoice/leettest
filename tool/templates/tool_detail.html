@@ -24,6 +24,7 @@
 
 			    		<div class="tool-post-title col-sm-9">
 			    			<p class="text-left">{{ tool.name }}</p>
+			    			<p class="text-left"><a href="{{ tool.url }}" target="_blank">{{ tool.url }}</a></p>
 			    			<blockquote>
 			    				<footer>{{ tool.summary }}</footer>
 			    			</blockquote>
@@ -35,17 +36,23 @@
 
 		    		</div><!--/.row-->
 		    		
-		    		<div class="col-sm-12"><hr></div>
+		    		<div class="soft_main">
 
-	      			<div class="col-sm-4">
-	      				<img class="img-thumbnail" src="{{ tool.picture.url }}" alt="Generic placeholder image" width="240" height="240">
-		    		</div>
+		      			<div class="col-sm-5">
+			      			<h3>软件截图</h3>
+		      				<img class="img-thumbnail" src="{{ tool.picture.url }}" alt="Generic placeholder image" width="95%" height="95%">
+			    		</div>
 
-		      		<div class="col-sm-8">
-				     	<PRE>
-				      		<div class="tool_description">{{ tool.description|safe }}</div>
-				   		</PRE>
-			   		</div>
+			      		<div class="col-sm-7">
+			      			<h3>详细描述</h3>
+					     	<PRE>
+					      		<div class="tool_description">{{ tool.description|safe }}</div>
+					   		</PRE>
+			      			<h3>标签</h3>
+					     	<a class="tag"href="#" title="全部">全部<em>(10)</em></a>
+                    		<a class="tag"href="#" title="标注工具">标注工具<em>(1)</em></a>
+				   		</div>
+				   	</div>
 
 		    	</div><!--/.tool-post-->
 	    	</div><!--/.tool-main-->

@@ -56,7 +56,8 @@ a.tag_cur em{color:#fff; border-left:#60befe solid 1px; cursor:default;}
 /*.soft_tags p a.tag_cur em{color:#fff; border-left:#60befe solid 1px; cursor:default;}*/
 
 
-.soft_list{background-color:#F6F7F7; padding-bottom:60px;}
+.soft_list{background-color:#F6F7F7; padding-bottom:60px;min-height: 200px}
+.soft_list h3 {margin:24px 24px 0;}
 .soft_list .soft_box{float:left; width:280px; height:230px; position:relative; overflow:hidden; margin:24px 24px 0;}
 .soft_list .soft_box:nth-child(odd){margin-right:0;}
 .soft_list .soft_box h4{background-color:#60beff; height:35px; line-height:35px; padding:0 10px; color:#FFF; font-size:14px;margin-top: 0px;margin-bottom: 1px;}

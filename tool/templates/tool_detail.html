@@ -49,8 +49,10 @@
 					      		<div class="tool_description">{{ tool.description|safe }}</div>
 					   		</PRE>
 			      			<h3>标签</h3>
-					     	<a class="tag"href="#" title="全部">全部<em>(10)</em></a>
-                    		<a class="tag"href="#" title="标注工具">标注工具<em>(1)</em></a>
+						     	<a class="tag"href="{% url 'tool:list' %}" title="全部">全部<em>({{total_num}})</em></a>
+			                    {% for tag in tags%}
+			                      <a class="tag"href="../?tagid={{ tag.id }}" title="{{tag.tag_name}}">{{tag.tag_name}}<em>({{tag.tool_num}})</em></a>
+			                    {%endfor%}
 				   		</div>
 				   	</div>
 

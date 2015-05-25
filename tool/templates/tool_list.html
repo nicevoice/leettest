@@ -26,10 +26,12 @@
         <div class="soft_sidebar">
             <div class="submit_a_new_tool"> <a class="btn btn-success" href="#">提交新工具</a> </div>
             <div class="soft_tags">
-               <h3>标签</h3>    
+               <h3>标签</h3>
                <p>
-                    <a class="tag tag_cur"href="#" title="全部">全部<em>(10)</em></a>
-                    <a class="tag"href="#" title="标注工具">标注工具<em>(1)</em></a>
+                    <a class="tag{%if not tagid %} tag_cur{%endif%}" href="{% url 'tool:list' %}" title="全部">全部<em>({{total_num}})</em></a>
+                    {% for tag in tags%}
+                      <a class="tag {% ifequal tagid tag.id %} tag_cur{%endifequal%} " href="?tagid={{ tag.id }}" title="{{tag.tag_name}}">{{tag.tag_name}}<em>({{tag.tool_num}})</em></a>
+                    {%endfor%}
                </p>
             </div>
         </div>
@@ -49,6 +51,8 @@
               </div>
 
             </div><!-- /.col-md-4 -->
+          {% empty %}
+            <h3><em>No Tool Exist In This Tag!</em></h3>
           {% endfor%}  
     </div>
 

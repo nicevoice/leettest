@@ -53,7 +53,10 @@ def list(request):
 def detail(request,article_id):
     try:
         article = Article.objects.get(id=article_id)
+        article.readcount+=1
+        article.save()
+        tags=article.tags.all()
     except Article.DoesNotExist:
         raise Http404("文章不存在!")
-    return render_to_response('article_detail.html', {"article": article},context_instance=RequestContext(request))
+    return render_to_response('article_detail.html', locals(),context_instance=RequestContext(request))
 

@@ -6,7 +6,7 @@
 
 {% block css %}
     <!-- Custom styles for this template -->
-    <link href="/static/css/blog.css" rel="stylesheet">\
+    <link href="/static/css/blog.css" rel="stylesheet">
     <link href="/static/js/syntaxhighlighter/styles/shCore.css" type="text/css" rel="stylesheet"/>
 	<link href="/static/js/syntaxhighlighter/styles/shThemeDjango.css" type="text/css" rel="stylesheet"/>
 {% endblock %}
@@ -52,13 +52,22 @@
 	    		<div class="col-sm-1">
 	    			<p><a class="btn btn-success" href="{% url 'blog:list' %}" role="button">&laquo; 返回</a></p>
 		        </div>
-		        <div class="col-sm-12">
-	      			<p class="blog-post-meta">分类：<a href="../?categoryid={{ article.category.id }}"><span class="label label-primary">{{ article.category }}</span></a></p>
-	      			<p class="blog-post-meta">作者：<a href="#">{{ article.author }}</a> | 发表时间：{{ article.publish_time|date:"Y-m-d H:i" }}</p>
-      			</div>
-      			<hr>
-		     	<div class="col-sm-12">
+
+		     	<div class="col-sm-8">
+      				<hr>
 		     		<PRE>{{ article.content|safe }}</PRE>
+		     	</div>
+
+		     	<div class="col-sm-3 sol-sm-off-1">
+		     		<p class="blog-post-meta">作者：<a href="#">{{ article.author }}</a> 
+		     		<p class="blog-post-meta">
+	      					分类：<a href="../?categoryid={{ article.category.id }}"><span class="label label-primary">{{ article.category }}</span></a> 
+	      			</p>
+	      			<p class="blog-post-meta">发表时间：{{ article.publish_time|date:"Y-m-d H:i" }} </p>
+	      			<p class="blog-post-meta">阅读:({{article.readcount}})</p> 
+	      			<p class="blog-post-meta">标签:{% for tag in tags%}
+			                      <a class="tag"href="../?tagid={{ tag.id }}" title="{{tag.tag_name}}">{{tag.tag_name}}</a>
+			                    {%endfor%}</p> 
 		     	</div>
 	    	</div>
 	    	</div>

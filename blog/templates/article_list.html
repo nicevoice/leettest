@@ -31,10 +31,17 @@
             <hr>
             <div class="blog-post">
               <h2 class="blog-post-title"><a href="{% url 'blog:detail' article.id %}">{{ article.caption }}</a></h2>
-              <p class="blog-post-meta">{{ article.publish_time|date:"Y-m-d H:i" }} by {{ article.author }}</p>
+              
+                <div class="blog-post-meta">
+                  <div class="left">{{ article.publish_time|date:"Y-m-d H:i" }} by {{ article.author }}</div>
+
+                  <div class="right">阅读({{ article.readcount}})</div>
+                </div>
+            
               <pre>
                 {{ article.content|safe|truncatechars_html:400}} 
 	            </pre> 
+
 	          </div><!-- /.blog-post -->
           {% endfor%}
 

@@ -207,5 +207,6 @@ h6, .h6 {
   font-weight:bold;
 }
 
-
+a.tag{background-color:#f7f7f7; border:1px solid #DDD; color:#333; font-size:14px; margin:0 6px 8px 0; padding:0 10px; text-decoration:none; white-space:nowrap; position:relative; border-radius:2px; height:24px; line-height:24px; display:inline-block;}
+a.tag:hover{background-color:#60befe; color:#fff;}
 

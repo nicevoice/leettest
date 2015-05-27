@@ -13,7 +13,7 @@ def list(request):
 
     total_num=len(all_tools)
     
-    tags=Tag.objects.all()
+    tags=Tag.objects.filter(use_range__in=[Tag.RANGE_ALL,Tag.RANGE_TOOL_ONLY])
 
     for tag in tags:
         tag.tool_num=len(tag.tool_set.all())
@@ -63,7 +63,7 @@ def detail(request,tool_id):
     try:
         tool = Tool.objects.get(id=tool_id)
 
-        tags=tool.tags.all()
+        tags=tool.tags.filter(use_range__in=[Tag.RANGE_ALL,Tag.RANGE_TOOL_ONLY])
         for tag in tags:
             tag.tool_num=len(tag.tool_set.all())
             tag.save()

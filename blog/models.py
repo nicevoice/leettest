@@ -1,3 +1,4 @@
+#coding=utf-8
 from django.db import models
 
 from public.models import Tag
@@ -28,6 +29,7 @@ class Article(models.Model):
     tags=models.ManyToManyField(Tag,blank=True)
     content=models.TextField()    
     readcount=models.IntegerField(default=0)
+    ispublic=models.BooleanField('公开发布',default=1)
     
     def __unicode__(self):
         return u'%s - %s - %s' % (self.caption,self.author,self.update_time.strftime("%Y-%m-%d %H:%I:%S"))

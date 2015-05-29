@@ -1,5 +1,6 @@
 eclipse.preferences.version=1
 encoding//blog/migrations/0002_auto_20150524_1509.py=utf-8
+encoding//blog/models.py=utf-8
 encoding//blog/views.py=utf-8
 encoding//crowd/views.py=utf-8
 encoding//tool/models.py=utf-8

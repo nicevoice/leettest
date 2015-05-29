@@ -20,9 +20,11 @@ def list(request):
                 category.article_num += 1
         category.save()
         
-    categoryid = request.GET.get('categoryid')    
+    categoryid = request.GET.get('categoryid')   
     if categoryid:
-        all_articles = Article.objects.filter(category__id=int(categoryid)).order_by("-publish_time") 
+        all_articles = all_articles.filter(category__id=int(categoryid))
+    if not request.user.is_authenticated():
+        all_articles=all_articles.filter(ispublic=1)
  
     p = Paginator(all_articles , 7)
     
@@ -58,5 +60,7 @@ def detail(request,article_id):
         tags=article.tags.all()
     except Article.DoesNotExist:
         raise Http404("文章不存在!")
+    if article.ispublic==0 and (not request.user.is_authenticated()):
+        raise Http404("权限不足！请登录后重试")
     return render_to_response('article_detail.html', locals(),context_instance=RequestContext(request))
 

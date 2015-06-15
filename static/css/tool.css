@@ -8,8 +8,12 @@
 .tool-header {
   padding-top: 20px;
   padding-bottom: 20px;
-  background: url(/static/images/banner0.png) repeat 0 0;
-  background-size:100% 100%;
+  background: url(/static/images/banner-slim.png) no-repeat;
+  background-size:960px 180px;
+  background-color: #2A4F62;
+  background-position: center;
+  color:#F6F6F6;
+  padding-left:40px;
 }
 .tool-title {
   margin-top: 30px;

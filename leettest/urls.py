@@ -15,6 +15,8 @@ urlpatterns = patterns('',
    
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
+    
+    (r'^favicon\.ico$', RedirectView.as_view(url='/static/images/favicon.ico')),
             
     (r'^site_media/(?P<path>.*)$', 'django.views.static.serve',{'document_root': settings.MEDIA_ROOT}),
         

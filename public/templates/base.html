@@ -15,9 +15,12 @@
     <!-- Bootstrap -->
     <!--  use http://cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.min.css for online deploy -->
     <link href="/static/bootstrap-3.3.4-dist/css/bootstrap.min.css" rel="stylesheet">
-
+    
     <!-- Custom styles for this template -->
     <link href="/static/css/base.css" rel="stylesheet">
+
+    <script src="/static/js/jquery.min.js"></script>    
+    <script src="/static/bootstrap-3.3.4-dist/js/bootstrap.min.js"></script>
 	
     {% block css %}{% endblock %}    
     
@@ -108,7 +111,7 @@
     {% block page_footer %}{% endblock %} 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <!--  use http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js for online deploy -->
-    <script src="/static/js/jquery.min.js"></script>    
-    <script src="/static/bootstrap-3.3.4-dist/js/bootstrap.min.js"></script>
   </body>
+
+  {% block footjs%}{% endblock %}
 </html>

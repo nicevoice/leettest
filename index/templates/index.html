@@ -8,9 +8,12 @@
     <link href="/static/css/index.css" rel="stylesheet">
 {% endblock %}
 
-{% block js %}
-<script  type="text/javascript">
 
+{% block js %}
+<script src="/static/js/jquery.min.js"></script>    
+<script src="/static/js/scrollTop.js"></script> 
+
+<script  type="text/javascript">
 	try {
 	    if (window.console && window.console.log) {
 	        console.log("author: wang peng\ne-mail:buaawp@gmail.com");
@@ -20,8 +23,8 @@
 	} catch(e) {
 	
 	}
-
 </script>
+
 {% endblock %}
 
 {% block content %}
@@ -74,3 +77,9 @@
 </div>
 
 {% endblock %}
+
+
+{%block page_footer%}
+    <div class="gotop btn btn-success" id="gotobg" title="回到顶部">&and;</div>
+{% endblock %}
+

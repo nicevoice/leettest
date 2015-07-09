@@ -47,21 +47,6 @@
 }
 
 
-
-/*
- * Blog name and description
- */
-
-.blog-header {
-  padding-top: 20px;
-  padding-bottom: 20px;
-  background: url(/static/images/banner-slim.jpg) no-repeat;
-  background-size:960px 180px;
-  background-color: #2A4F62;
-  background-position: center;
-  color:#F6F6F6;
-  padding-left:40px;
-}
 .blog-title {
   margin-top: 30px;
   margin-bottom: 0;
@@ -185,17 +170,7 @@
 
 
 
-.gotop{  
-  display:none;
-  left: 80%;
-  bottom:30px;
-  position:fixed;
-  z-index: 200;
-  filter:alpha(opacity=80); /*IE滤镜，透明度70%*/
-  -moz-opacity:0.8; /*Firefox私有，透明度70%*/
-  opacity:0.8;/*其他，透明度70%*/
-  font-weight:bold;
-}
+
 
 a.tag{background-color:#f7f7f7; border:1px solid #DDD; color:#333; font-size:14px; margin:0 6px 8px 0; padding:0 10px; text-decoration:none; white-space:nowrap; position:relative; border-radius:2px; height:24px; line-height:24px; display:inline-block;}
 a.tag:hover{background-color:#60befe; color:#fff;}

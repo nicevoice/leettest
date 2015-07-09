@@ -1,20 +1,6 @@
 @charset "utf-8";
 
 
-/*
- * tool name and description
- */
-
-.tool-header {
-  padding-top: 20px;
-  padding-bottom: 20px;
-  background: url(/static/images/banner-slim.jpg) no-repeat;
-  background-size:960px 180px;
-  background-color: #2A4F62;
-  background-position: center;
-  color:#F6F6F6;
-  padding-left:40px;
-}
 .tool-title {
   margin-top: 30px;
   margin-bottom: 0;

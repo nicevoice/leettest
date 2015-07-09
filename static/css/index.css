@@ -1,6 +1,7 @@
 .topbox{
 	background-color: white;
 	margin-bottom:20px;
+	box-shadow: 1px 1px 7px 0px #CCC;
 }
 
 .topblock{
@@ -11,7 +12,7 @@
 }
 
 .topblock:hover{
-	border:1px silver solid;
+	font-weight:600;
 }
 
 .sidebox{
@@ -21,6 +22,7 @@
 .sideblock{
 	background-color: white;
 	margin-top:0px;
+	box-shadow: 1px 1px 7px 0px #CCC;
 }
 
 .sideblock_top{
@@ -35,6 +37,7 @@
 .contentbox{
 	margin-top:10px;
 	background-color: white;
+	box-shadow: 1px 1px 7px 0px #CCC;
 }
 
 .contentblock{

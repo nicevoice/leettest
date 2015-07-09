@@ -25,26 +25,52 @@
 {% endblock %}
 
 {% block content %}
-    <!-- Main jumbotron for a primary marketing message or call to action -->
-    <div class="jumbotron">
-      <div class="container">
-        <h1>Hello, Testers!</h1>
-        <p></p>
-        <p>SHOW ME THE CODE </p>
-        <p><a class="btn btn-lg btn-success" href="/blog" role="button">Learn more &raquo;</a></p>
-      </div>
-    </div>
 
-    <div class="container">
-      <!-- Example row of columns -->
-      <div class="row">
-        {% for block in blocks%}
-        <div class="col-md-4">      
-          <h2>{{block.name}}</h2>
-          <p>{{block.description}}</p>
-          <p><a class="btn btn-primary" href="{{block.url}}" role="button">View details &raquo;</a></p>
-        </div>
-        {% endfor%}
-      </div>
-    </div>
+<div class ="container">
+  <div class="col-md-8">
+        <div class="row topbox">
+          {% for block in blocks%}
+            <div class="col-md-4 topblock">      
+              <h2>{{block.name}}</h2>
+              <p>{{block.description}}</p>
+              <p><a class="btn btn-primary" href="{{block.url}}" role="button">View details &raquo;</a></p>
+            </div>
+          {% endfor%}
+        </div>  
+
+        <div class="row contentbox">
+        {% for article in articles%}          
+            <div class="contentblock">
+              <div class="category">{{ article.category.name }}</div>
+              <h3 ><a href="{% url 'blog:detail' article.id %}">{{ article.caption }}</a></h3>              
+                <div class="contentblock-meta" >{{ article.publish_time|date:"Y-m-d H:i" }} by {{ article.author }} | 阅读({{ article.readcount}})</div>
+                 
+                {{ article.content|safe|truncatechars_html:200}} 
+
+            </div><!-- /.contentblock -->
+          {% endfor%}
+          </div>  
+  </div>
+
+
+       <div class="col-md-4 sidebox">
+        <div class="sideblock">
+          <h3 class="sideblock_top">
+            排行榜
+          </h3>
+          <div class="sideblock_item">
+            <ol>
+              <li><h5>1</h5></li>
+              <li><h5>2</h5></li>
+              <li><h5>3</h5></li>
+              <li><h5>4</h5></li>
+            </ol>
+            </div>
+         </div>
+       </div>
+
+
+  </div>
+</div>
+
 {% endblock %}

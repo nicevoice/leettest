@@ -42,7 +42,6 @@ INSTALLED_APPS = (
     'index',
     'blog',
     'public',
-    'crowd',
     'tool',
     'duoshuo'
 )

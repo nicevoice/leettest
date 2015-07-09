@@ -28,9 +28,6 @@ urlpatterns = patterns('',
     
     #config for blog modules
     url(r'^blog/',include('blog.urls',namespace='blog')),
-    
-    #config for crowd modules
-    url(r'^crowd/',include('crowd.urls',namespace='crowd')),
 )
 
 #add static resources config when settings.DEBUG=FALSE

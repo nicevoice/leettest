@@ -57,6 +57,7 @@
 
 
        <div class="col-md-4 sidebox">
+
         <div class="sideblock">
           <h3 class="sideblock_top">
             排行榜
@@ -64,11 +65,26 @@
           <div class="sideblock_item">
             <ol>
               {% for article in rank_articles%}   
+               <span class="ranknum"></span>
                 <li><h5><a href="{% url 'blog:detail' article.id %}" title="{{article.caption}}">{{ article.caption|safe|truncatechars_html:25}}</a></h5></li> 
               {% endfor%}
             </ol>
             </div>
          </div>
+
+         <div class="sideblock">
+          <h3 class="sideblock_top">
+            文章分类
+          </h3>
+          <div class="sideblock_item">
+            <ul>
+              {% for category in categorys %}
+                  <li><h5><a href="{% url 'blog:list' %}?categoryid={{category.id}}" target="_blank">{{category.name}}&nbsp;&nbsp;<span class="badge">&nbsp;{{category.article_num}}&nbsp;</span></a></h5></li>
+              {% endfor%}
+            </ul>
+            </div>
+         </div>
+
        </div>
 
 

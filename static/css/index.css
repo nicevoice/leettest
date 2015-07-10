@@ -22,8 +22,14 @@
 .sideblock{
 	background-color: white;
 	margin-top:0px;
+	margin-bottom: 20px;
 	padding-bottom: 5px;
 	box-shadow: 1px 1px 7px 0px #CCC;
+}
+
+.sideblock_item ol li{
+	padding-left: 5px;	
+	color:white;
 }
 
 .sideblock_top{
@@ -61,4 +67,12 @@
 	box-shadow: 2px 2px 2px 1px #CCC;
 }
 
+.ranknum{
+	width: 20px;
+	height: 20px;
+	background-color: #58749C;
+	float: left;
+	margin-left: -20px;
+	margin-top: -2px;
+}
 

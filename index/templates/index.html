@@ -63,10 +63,9 @@
           </h3>
           <div class="sideblock_item">
             <ol>
-              <li><h5>1</h5></li>
-              <li><h5>2</h5></li>
-              <li><h5>3</h5></li>
-              <li><h5>4</h5></li>
+              {% for article in rank_articles%}   
+                <li><h5><a href="{% url 'blog:detail' article.id %}" title="{{article.caption}}">{{ article.caption|safe|truncatechars_html:25}}</a></h5></li> 
+              {% endfor%}
             </ol>
             </div>
          </div>

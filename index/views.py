@@ -11,6 +11,8 @@ def index(req):
 	if not req.user.is_authenticated():
 		all_articles=all_articles.filter(ispublic=1)
 	p = Paginator(all_articles , 10)
-	articles = p.page(1)        
+	articles = p.page(1) 
+
+	rank_articles=Article.objects.all().order_by("-readcount")[:10]       
 
 	return render_to_response("index.html",locals())

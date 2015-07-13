@@ -50,7 +50,7 @@ def list(request):
     else:
         page_range = p.page_range[0:page + before_range_num]        
         
-    return render_to_response('article_list.html',locals())
+    return render_to_response('blog/list.html',locals())
 
 def detail(request,article_id):
     try:
@@ -62,5 +62,5 @@ def detail(request,article_id):
         raise Http404("文章不存在!")
     if article.ispublic==0 and (not request.user.is_authenticated()):
         raise Http404("权限不足！请登录后重试")
-    return render_to_response('article_detail.html', locals(),context_instance=RequestContext(request))
+    return render_to_response('blog/detail.html', locals(),context_instance=RequestContext(request))
 

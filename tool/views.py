@@ -54,7 +54,7 @@ def list(request):
         page_range = p.page_range[0:page + before_range_num]
 
 
-    return render_to_response('tool_list.html', locals())
+    return render_to_response('tool/list.html', locals())
 
 def detail(request,tool_id):
 
@@ -70,5 +70,5 @@ def detail(request,tool_id):
 
     except Tool.DoesNotExist:
         raise Http404("工具不存在！")
-    return render_to_response('tool_detail.html', locals(),context_instance=RequestContext(request))
+    return render_to_response('tool/detail.html', locals(),context_instance=RequestContext(request))
 

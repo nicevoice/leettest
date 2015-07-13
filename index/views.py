@@ -25,4 +25,4 @@ def index(req):
 
 	rank_articles=Article.objects.all().order_by("-readcount")[:10]       
 
-	return render_to_response("index.html",locals())
+	return render_to_response("index/index.html",locals())

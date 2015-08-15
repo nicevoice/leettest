@@ -53,6 +53,7 @@ def list(request):
     else:
         page_range = p.page_range[0:page + before_range_num]
 
+    page_title="软件测试工具"
 
     return render_to_response('tool/list.html', locals())
 
@@ -67,8 +68,10 @@ def detail(request,tool_id):
         for tag in tags:
             tag.tool_num=len(tag.tool_set.all())
             tag.save()
-
+ 
+        page_title=tool.name
     except Tool.DoesNotExist:
         raise Http404("工具不存在！")
+
     return render_to_response('tool/detail.html', locals(),context_instance=RequestContext(request))
 

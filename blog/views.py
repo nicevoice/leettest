@@ -50,6 +50,7 @@ def list(request):
     else:
         page_range = p.page_range[0:page + before_range_num]        
         
+    page_title = "软件测试博客"
     return render_to_response('blog/list.html',locals())
 
 def detail(request,article_id):
@@ -58,6 +59,7 @@ def detail(request,article_id):
         article.readcount+=1
         article.save()
         tags=article.tags.all()
+        page_title=article.caption 
     except Article.DoesNotExist:
         raise Http404("文章不存在!")
     if article.ispublic==0 and (not request.user.is_authenticated()):

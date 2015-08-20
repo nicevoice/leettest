@@ -43,6 +43,7 @@ INSTALLED_APPS = (
     'blog',
     'public',
     'tool',
+    'dh',
     'duoshuo'
 )
 

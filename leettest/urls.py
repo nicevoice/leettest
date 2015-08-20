@@ -39,6 +39,9 @@ urlpatterns = patterns('',
       
     #config for tool modules
     url(r'^tool/',include('tool.urls',namespace='tool')),  
+
+    url('^dh$','dh.views.dh'),   
+
     
 )
 
